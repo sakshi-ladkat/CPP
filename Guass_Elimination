@@ -1,0 +1,83 @@
+int i,j,k,m,n,a[100][100],mul;
+ int input(),gausselmination();
+#include<stdio.h>
+int main()
+{
+    input();
+    print();
+    gausselmination();
+    print();
+    
+}
+    
+  input()
+    {
+    // m=row,n=column,k=running index
+    printf("Enter No of Rows and Columns");
+    scanf("%d %d",&m,&n);
+
+    if(m==n)
+    {
+        
+        for(i=1;i<=m;i++)
+        for(j=1;j<=n+1;j++)
+        {
+            if(j==n+1)
+            {
+                printf("\nEnter b1 of %d equation",i);
+                scanf("%d",&a[i][j]);
+            }
+            else
+       {
+        printf("Enter coefficient of %d equation",i);
+        scanf("%d",&a[i][j]);
+        
+        }
+    }
+}
+else 
+{
+    printf(" Number of rows should equal to number of Columns !!");
+}
+}
+print()
+{
+ printf("\n Matrix Represendation with Augmentation\n\n");
+   for(i=1;i<=m;i++)
+   {
+        for(j=1;j<=n+1;j++)
+        {
+            if(j==n+1)
+            {
+                printf("\t|\t %d \t",a[i][j]);
+            }
+            else
+            {
+        printf("\t %d \t",a[i][j]);
+            }
+       
+        }
+   
+        printf("\n");
+   }
+}
+gausselmination()
+{
+  i=1;
+  while(i!=n)
+  {
+    i=i+1;
+    if(a[i][i]!=0)
+    {
+   for(k=i+1;k<=m+1;i++)
+   mul=a[k][i]/a[i][i];
+   for(j=1;j<=n+1;j++)
+   a[k][j]=a[k][i]-m*a[j][i];
+   i=i+1;
+  }
+  else
+  {
+      printf("a[%d][%d] Should not be zero",i,i);
+  }
+  }
+}
