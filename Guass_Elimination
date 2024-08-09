@@ -7,7 +7,6 @@ int main()
     print();
     gausselmination();
     print();
-    
 }
     
   input()
@@ -63,21 +62,22 @@ print()
 }
 gausselmination()
 {
-  i=1;
-  while(i!=n)
+  int i;
+  for(i=1;i<n;i++)
   {
     i=i+1;
-    if(a[i][i]!=0)
+    if(a[i][i]==0)
     {
-   for(k=i+1;k<=m+1;i++)
+        printf("a[%d][%d] Should not be zero",i,i);
+        break;
+    }
+    else
+    {
+   for(k=i+1;k<=n;k++)
    mul=a[k][i]/a[i][i];
    for(j=1;j<=n+1;j++)
-   a[k][j]=a[k][i]-m*a[j][i];
+   a[k][j]=a[k][j]-m*a[i][j];
    i=i+1;
-  }
-  else
-  {
-      printf("a[%d][%d] Should not be zero",i,i);
-  }
-  }
+}
+}
 }
