@@ -1,5 +1,5 @@
 int i,j,k,m,n,a[100][100],mul;
- int input(),gausselmination();
+ int input(),gausselmination()
 #include<stdio.h>
 int main()
 {
