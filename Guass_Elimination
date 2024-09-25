@@ -1,15 +1,16 @@
-int i,j,k,m,n,a[100][100],mul;
- int input(),gausselmination()
+int i,j,k,m,n,a[5][5],mul,pivot;
+ int input(),gausselmination(),Display();
 #include<stdio.h>
 int main()
 {
     input();
-    print();
+    Display();
     gausselmination();
-    print();
+    Display();
+    return 0;
 }
     
-  input()
+  int input()
     {
     // m=row,n=column,k=running index
     printf("Enter No of Rows and Columns");
@@ -23,23 +24,18 @@ int main()
         {
             if(j==n+1)
             {
-                printf("\nEnter b1 of %d equation",i);
+                printf("Enter b1 of %d equation",i);
                 scanf("%d",&a[i][j]);
             }
             else
-       {
+        {
         printf("Enter coefficient of %d equation",i);
         scanf("%d",&a[i][j]);
-        
         }
+      }
     }
-}
-else 
-{
-    printf(" Number of rows should equal to number of Columns !!");
-}
-}
-print()
+  }
+int Display()
 {
  printf("\n Matrix Represendation with Augmentation\n\n");
    for(i=1;i<=m;i++)
@@ -60,17 +56,23 @@ print()
         printf("\n");
    }
 }
-gausselmination()
+int gausselmination()
 {
-  int i;
-  for(i=1;i<=n;i++)
-  {
-    {
-   for(k=i+1;k<=n;k++)
-   mul=a[k][i]/a[i][i];
+    for(i=1;i<=m;i++)
+    {  if(a[i][i]!=0)
+    {  pivot=a[i][i];
+    for(j=1;j<=n+1;j++)
+    { 
+        a[i][j]=a[i][j]/pivot;
+    }
+   for(k=i+1;k<=m;k++)
+   {
+   mul=a[k][i];
    for(j=i;j<=n+1;j++)
-   a[k][j]=a[k][j]-m*a[i][j];
-   i=i+1;
-}
-}
+   { 
+   a[k][j]=a[k][j]-mul*a[i][j];
+   }
+   }
+  }
+  }
 }
