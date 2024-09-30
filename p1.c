@@ -4,7 +4,7 @@
 int main() {
    int n,i,a[100],prime[100],flag=0,j;
 printf("Enter Number of Elements");
-scanf("%d",&n);
+scanf("%d",&n)
 
 for(i=0;i<n;i++)
 {
