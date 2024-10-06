@@ -70,7 +70,7 @@ int gausselmination()
    mul=a[k][i];
    for(j=i;j<=n+1;j++)
    { 
-   a[k][j]=a[k][j]-mul*a[i][j]
+   a[k][j]=a[k][j]-mul*a[i][j];
    }
    }
   }
