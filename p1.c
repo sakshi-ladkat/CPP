@@ -1,6 +1,6 @@
 // Write a C program to accept n numbers and store all prime numbers in an array called prime.Display this Array 
 
-#include <stdio.h>
+
 int main() {
    int n,i,a[100],prime[100],flag=0,j;
 printf("Enter Number of Elements");
