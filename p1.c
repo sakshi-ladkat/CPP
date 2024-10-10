@@ -33,7 +33,7 @@ else {
 for(i=0;i<n;i++)
 {
 
-    printf("%d",prime[i]);
+    printf("%d",prime[i])
   
   
 }
