@@ -14,7 +14,7 @@ int main()
     {
     // m=row,n=column,k=running index
     printf("Enter No of Rows and Columns");
-    scanf("%d %d",&m,&n);
+    scanf("%d %d",&m,&n)
 
     if(m==n)
     {
