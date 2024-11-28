@@ -3,7 +3,7 @@ int i,j,k,m,n,a[5][5],mul,pivot;
 #include<stdio.h>
 int main()
 {
-    input()
+    input();
     Display();
     gausselmination();
     Display();
