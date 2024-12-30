@@ -9,7 +9,7 @@ scanf("%d",&n)
 for(i=0;i<n;i++)
 {
     printf("Enter Number");
-    scanf("\t%d\t",&a[i]);
+    scanf("\t%d\t",&a[i])
 }
 for(i=0;i<n;i++)
 {
