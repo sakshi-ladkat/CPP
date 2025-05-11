@@ -7,7 +7,7 @@ public:
         if (n == 0)
             return 0;
 
-        vector<int> LIS(n, 1); // Every element is an LIS of length 1 by itself
+        vector<int> LIS(n, 1);
 
         for (int i = 1; i < n; i++)
         {
@@ -20,7 +20,6 @@ public:
             }
         }
 
-        // Return the maximum length found
         return *max_element(LIS.begin(), LIS.end());
     }
 };
