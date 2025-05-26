@@ -19,24 +19,33 @@ public:
 };
 */
 
-class Solution
-{
+class Solution {
 public:
-    Node *cloneGraph(Node *node)
-    {
+    Node* cloneGraph(Node* node) {
+        if(!node)
+            return nullptr;
+
+        unordered_map<int,Node*>visited;
+        return clone_node(node,visited);
+
+        
     }
 
-    Node *clone_node(Node *node, unordered_map<int, Node *> &visited)
-    {
-        Node *new_node = new Node(node->val);
-        visited.insert({node->val, new_node});
+    Node * clone_node(Node* node,unordered_map<int,Node*>& visited){
+        Node * new_node = new Node(node->val);
+        visited.insert({node->val,new_node});
 
-        for (Node *n : node->neighbors)
-        {
+        for(Node *n : node->neighbors) {
             auto it = visited.find(n->val);
-            if (it == visited.end())
-            {
+            if(it == visited.end()) {
+                Node* cn =clone_node(n,visited);
+                new_node->neighbors.push_back(cn);
             }
+            else 
+             {
+                new_node->neighbors.push_back(it->second);
+             }
         }
+        return new_node;
     }
 };
