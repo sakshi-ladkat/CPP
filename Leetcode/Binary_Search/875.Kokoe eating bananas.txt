@@ -1,0 +1,20 @@
+class Solution {
+public:
+    vector<int> eatingbanaas(vector<int>& pairs, int h) {
+      int sz = pairs.size();
+      int max = *max_element(pairs.begin(),pairs.end())
+            int low = 1 , high = max;
+            while(low <= high)
+            {
+                
+                int mid = low + (high - low)/2;
+                if((long long)spell* potions[mid] >= success)
+                   high = mid;
+                else
+                    low = mid + 1;
+            }
+            pairs.push_back(ps-low);
+        }
+       return pairs;    
+    }
+};
