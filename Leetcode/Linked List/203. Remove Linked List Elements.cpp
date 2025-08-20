@@ -14,7 +14,7 @@ public:
             } else {
                 prev = curr;
             }
-            curr = curr->next;
+            curr = curr->next
         }
 
         head = dummy->next;
