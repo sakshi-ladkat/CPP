@@ -2,16 +2,22 @@ class Solution {
 public:
     bool judgeSquareSum(int c) {
 
-        for(int i=0;i<c;i++)
+        for(int divisor=2;divisor*divisor<=c;divisor++)
         {
-            for(int j=0;j<c;j++)
+            if(c%divisor==0)
             {
-                if((i*i)+(j*j)==c)
+                int exponentCount = 0;
+                while(c%divisor == 0)
                 {
-                    return true;
+                    exponentCount++;
+                    c/=divisor;
+                }
+                if(divisor % 4 == 3 && exponentCount %2 !=0)
+                {
+                    return false;
                 }
             }
         }
-        return false;
+        return c % 4 !=3;
     }
 };
